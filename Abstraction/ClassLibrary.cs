@@ -27,7 +27,6 @@ public abstract class Product
     }
     public abstract void Display();
 }
-
 public class Laptop : Product
 {
     protected string processor;
@@ -68,7 +67,6 @@ public class Laptop : Product
             $"Модель процесора: {processor}\nМодель відеокарти: {videocard}\nОб'єм накопичувача: {storage}гб\nОЗУ: {ram}гб");
     }
 }
-
 public class Monitor : Product
 {
     protected int diagonal;
@@ -107,5 +105,45 @@ public class Monitor : Product
     {
         Console.WriteLine($"Категорія: Монітор\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
             $"Діагональ екрана: {diagonal}''\nЧастота оновлення: {frequency}гц\nТип матриці: {matrix}\nСпіввідношення сторін: {ratio}");
+    }
+}
+public class Drive : Product
+{
+    protected int storage;
+    protected int transfer;
+    protected string type;
+    protected string usb;
+    public int Storage
+    {
+        get { return storage; }
+        set { storage = value; }
+    }
+    public int Transfer
+    {
+        get { return transfer; }
+        set { transfer = value; }
+    }
+    public string Type
+    {
+        get { return type; }
+        set { type = value; }
+    }
+    public string Usb
+    {
+        get { return usb; }
+        set { usb = value; }
+    }
+    public Drive(string name, double price, int count, int storage, int transfer, string type, string usb)
+        : base(name, price, count)
+    {
+        Storage = storage;
+        Transfer = transfer;
+        Type = type;
+        Usb = usb;
+    }
+    public override void Display()
+    {
+        Console.WriteLine($"Категорія: Зовнішній накопичувач\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
+            $"Об'єм накопичувача: {storage}тб\nШвидкість передачі даних: {transfer}мб/с\nТип накопичувача: {type}\nUSB Інтерфейс: {usb}");
     }
 }
