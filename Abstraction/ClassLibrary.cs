@@ -7,17 +7,17 @@ public abstract class Product
     public string Name
     {
         get { return name; }
-        set { name = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product name field cannot be empty!"); name = value; }
     }
     public double Price
     {
         get { return price; }
-        set { price = value; }
+        set { if (value <= 0) throw new ArgumentException("The product price field cannot be zero or negative!"); price = value; }
     }
     public int Count
     {
         get { return count; }
-        set { count = value; }
+        set { if (value <= 0) throw new ArgumentException("The product count field cannot be zero or negative!"); count = value; }
     }
     protected Product(string name, double price, int count)
     {
@@ -36,22 +36,22 @@ public class Laptop : Product
     public string Processor 
     {
         get { return processor; }
-        set { processor = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product processor field cannot be empty!"); processor = value; }
     }
     public string Videocard 
     { 
         get { return videocard; }
-        set { videocard = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product videocard field cannot be empty!"); videocard = value; }
     }
     public int Storage 
     { 
         get { return storage; }
-        set { storage = value; }
+        set { if (value <= 0) throw new ArgumentException("The product storage field cannot be zero or negative!"); storage = value; }
     }
     public int Ram 
     {
         get { return ram; }
-        set { ram = value; }
+        set { if (value <= 0) throw new ArgumentException("The product ram field cannot be zero or negative!"); ram = value; }
     }
     public Laptop(string name, double price, int count, string processor, string videocard, int storage, int ram)
         : base(name, price, count)
@@ -76,22 +76,22 @@ public class Monitor : Product
     public int Diagonal
     {
         get { return diagonal; }
-        set { diagonal = value; }
+        set { if (value <= 0) throw new ArgumentException("The product diagonal field cannot be zero or negative!"); diagonal = value; }
     }
     public int Frequency
     {
         get { return frequency; }
-        set { frequency = value; }
+        set { if (value <= 0) throw new ArgumentException("The product frequency field cannot be zero or negative!"); frequency = value; }
     }
     public string Matrix
     {
         get { return matrix; }
-        set { matrix = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product matrix field cannot be empty!"); matrix = value; }
     }
     public string Ratio
     {
         get { return ratio; }
-        set { ratio = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product ratio field cannot be empty!"); ratio = value; }
     }
     public Monitor(string name, double price, int count, int diagonal, int frequency, string matrix, string ratio)
         : base(name, price, count)
@@ -116,22 +116,22 @@ public class Drive : Product
     public int Storage
     {
         get { return storage; }
-        set { storage = value; }
+        set { if (value <= 0) throw new ArgumentException("The product storage field cannot be zero or negative!"); storage = value; }
     }
     public int Transfer
     {
         get { return transfer; }
-        set { transfer = value; }
+        set { if (value <= 0) throw new ArgumentException("The product transfer field cannot be zero or negative!"); transfer = value; }
     }
     public string Type
     {
         get { return type; }
-        set { type = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product type field cannot be empty!"); type = value; }
     }
     public string Usb
     {
         get { return usb; }
-        set { usb = value; }
+        set { if (value.Length <= 0) throw new ArgumentException("The product usb field cannot be empty!"); usb = value; }
     }
     public Drive(string name, double price, int count, int storage, int transfer, string type, string usb)
         : base(name, price, count)
