@@ -5,6 +5,9 @@ class Program
     {
         Console.OutputEncoding = System.Text.Encoding.Unicode;
         Laptop laptop = new Laptop("Lenovo IdeaPad Gaming 3 15ARH7", 34999, 1, "Ryzen 5 6600H", "GeForce RTX 3050", 512, 16);
+        Monitor monitor = new Monitor("Odyssey G5A", 11299, 1, 27, 165, "IPS", "16:9");
         laptop.Display();
+        Console.WriteLine();
+        monitor.Display();
     }
 }

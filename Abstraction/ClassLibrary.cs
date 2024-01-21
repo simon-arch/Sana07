@@ -65,6 +65,47 @@ public class Laptop : Product
     public override void Display()
     {
         Console.WriteLine($"Категорія: Ноутбук\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
-            $"Модель процесора: {processor}\nМодель відеокарти: {videocard}\nОб'єм накопичувача: {storage} гб\nОЗУ: {ram} гб");
+            $"Модель процесора: {processor}\nМодель відеокарти: {videocard}\nОб'єм накопичувача: {storage}гб\nОЗУ: {ram}гб");
+    }
+}
+
+public class Monitor : Product
+{
+    protected int diagonal;
+    protected int frequency;
+    protected string matrix;
+    protected string ratio;
+    public int Diagonal
+    {
+        get { return diagonal; }
+        set { diagonal = value; }
+    }
+    public int Frequency
+    {
+        get { return frequency; }
+        set { frequency = value; }
+    }
+    public string Matrix
+    {
+        get { return matrix; }
+        set { matrix = value; }
+    }
+    public string Ratio
+    {
+        get { return ratio; }
+        set { ratio = value; }
+    }
+    public Monitor(string name, double price, int count, int diagonal, int frequency, string matrix, string ratio)
+        : base(name, price, count)
+    {
+        Diagonal = diagonal;
+        Frequency = frequency;
+        Matrix = matrix;
+        Ratio = ratio;
+    }
+    public override void Display()
+    {
+        Console.WriteLine($"Категорія: Монітор\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
+            $"Діагональ екрана: {diagonal}''\nЧастота оновлення: {frequency}гц\nТип матриці: {matrix}\nСпіввідношення сторін: {ratio}");
     }
 }
