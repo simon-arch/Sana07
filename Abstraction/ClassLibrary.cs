@@ -147,3 +147,23 @@ public class Drive : Product
             $"Об'єм накопичувача: {storage}тб\nШвидкість передачі даних: {transfer}мб/с\nТип накопичувача: {type}\nUSB Інтерфейс: {usb}");
     }
 }
+
+public class ShoppingCart
+{
+    private List<Product> products = new List<Product>();
+    public void Add(Product product)
+    {
+        products.Add(product);
+    }
+    public void Display()
+    {
+        foreach (Product product in products)
+        {
+            product.Display();
+        }
+    }
+    public double Total()
+    {
+        return products.Sum(prod => prod.Price * prod.Count);
+    }
+}
