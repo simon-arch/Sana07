@@ -63,8 +63,8 @@ public class Laptop : Product
     }
     public override void Display()
     {
-        Console.WriteLine($"Категорія: Ноутбук\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
-            $"Модель процесора: {processor}\nМодель відеокарти: {videocard}\nОб'єм накопичувача: {storage}гб\nОЗУ: {ram}гб");
+        Console.WriteLine($"[Категорія: Ноутбук]\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
+            $"Модель процесора: {processor}\nМодель відеокарти: {videocard}\nОб'єм накопичувача: {storage}гб\nОЗУ: {ram}гб\n");
     }
 }
 public class Monitor : Product
@@ -103,8 +103,8 @@ public class Monitor : Product
     }
     public override void Display()
     {
-        Console.WriteLine($"Категорія: Монітор\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
-            $"Діагональ екрана: {diagonal}''\nЧастота оновлення: {frequency}гц\nТип матриці: {matrix}\nСпіввідношення сторін: {ratio}");
+        Console.WriteLine($"[Категорія: Монітор]\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
+            $"Діагональ екрана: {diagonal}''\nЧастота оновлення: {frequency}гц\nТип матриці: {matrix}\nСпіввідношення сторін: {ratio}\n");
     }
 }
 public class Drive : Product
@@ -143,8 +143,8 @@ public class Drive : Product
     }
     public override void Display()
     {
-        Console.WriteLine($"Категорія: Зовнішній накопичувач\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
-            $"Об'єм накопичувача: {storage}тб\nШвидкість передачі даних: {transfer}мб/с\nТип накопичувача: {type}\nUSB Інтерфейс: {usb}");
+        Console.WriteLine($"[Категорія: Зовнішній накопичувач]\nНазва: {name}\nЦіна: {price} грн\nКількість: {count} шт.\n" +
+            $"Об'єм накопичувача: {storage}тб\nШвидкість передачі даних: {transfer}мб/с\nТип накопичувача: {type}\nUSB Інтерфейс: {usb}\n");
     }
 }
 
